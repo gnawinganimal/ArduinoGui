@@ -5,6 +5,7 @@ project.apply { from("./versions.gradle.kts") }
 
 val kotlinVrs: String by extra
 val ardulinkVrs: String by extra
+val tornadoFxVrs: String by extra
 
 plugins {
     java
@@ -24,6 +25,7 @@ dependencies {
     compile(kotlin("stdlib-jdk8", kotlinVrs))
     compile("org.ardulink", "ardulink-core-base", ardulinkVrs)
     compile("org.ardulink", "ardulink-core-serial-jssc", ardulinkVrs)
+    compile("no.tornado", "tornadofx", tornadoFxVrs)
 }
 
 val fatJar = task("fatJar", type = Jar::class) {
