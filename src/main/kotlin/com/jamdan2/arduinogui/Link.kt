@@ -5,10 +5,8 @@ import org.ardulink.core.convenience.Links
 
 val link: Link = Links.getDefault()
 
-fun Link.setServoAngle(angle: Int) {
-    when {
-        angle < 10 -> sendCustomMessage("ssrv", "00$angle")
-        angle < 100 -> sendCustomMessage("ssrv", "0$angle")
-        else -> sendCustomMessage("ssrv", "$angle")
-    }
-}
+fun Link.setServoAngle(angle: Int) = sendCustomMessage("ssrv", when {
+    angle < 10 -> "00$angle"
+    angle < 100 -> "0$angle"
+    else -> "$angle"
+})

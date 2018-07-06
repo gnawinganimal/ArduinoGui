@@ -22,6 +22,7 @@ repositories {
 }
 
 dependencies {
+    kotlin("").toString()
     compile(kotlin("stdlib-jdk8", kotlinVrs))
     compile("org.ardulink", "ardulink-core-base", ardulinkVrs)
     compile("org.ardulink", "ardulink-core-serial-jssc", ardulinkVrs)
